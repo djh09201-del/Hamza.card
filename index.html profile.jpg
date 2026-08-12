@@ -1,1 +1,332 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hamza | Digital Business Card</title>
+
+  <meta name="description" content="Hamza - Digital Business Card">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        linear-gradient(135deg, #050505, #151515, #000000);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 350px;
+      height: 350px;
+      background: #ff6a00;
+      filter: blur(130px);
+      opacity: 0.25;
+      top: -100px;
+      left: -100px;
+      z-index: -1;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      background: #ff2d55;
+      filter: blur(130px);
+      opacity: 0.15;
+      bottom: -100px;
+      right: -100px;
+      z-index: -1;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 430px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 30px;
+      padding: 25px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 25px 70px rgba(0,0,0,0.6);
+      text-align: center;
+      animation: appear 1s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .photo-box {
+      width: 150px;
+      height: 150px;
+      margin: auto;
+      padding: 5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff7a00, #ff1744, #ffd000);
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 15px rgba(255,100,0,0.4);
+      }
+
+      to {
+        box-shadow: 0 0 35px rgba(255,100,0,0.9);
+      }
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      border: 4px solid #111;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 35px;
+      letter-spacing: 1px;
+    }
+
+    .username {
+      color: #ff7a00;
+      font-size: 16px;
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    .bio {
+      margin: 15px 0 22px;
+      color: #ccc;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 15px;
+      border-radius: 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.08);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .call {
+      background: linear-gradient(135deg, #ff7a00, #ff3d00);
+    }
+
+    .whatsapp {
+      background: linear-gradient(135deg, #00c853, #009624);
+    }
+
+    .email {
+      background: linear-gradient(135deg, #673ab7, #3f51b5);
+    }
+
+    .social {
+      background: linear-gradient(135deg, #111, #333);
+    }
+
+    .share {
+      background: linear-gradient(135deg, #444, #111);
+    }
+
+    .footer {
+      margin-top: 25px;
+      color: #888;
+      font-size: 12px;
+    }
+
+    .footer span {
+      color: #ff7a00;
+    }
+
+    .line {
+      width: 60px;
+      height: 3px;
+      background: #ff7a00;
+      margin: 15px auto;
+      border-radius: 10px;
+    }
+
+    @media(max-width: 400px) {
+      .card {
+        padding: 20px;
+      }
+
+      .photo-box {
+        width: 125px;
+        height: 125px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <!-- PHOTO -->
+    <div class="photo-box">
+      <img src="profile.jpg" alt="Hamza">
+    </div>
+
+    <!-- NAME -->
+    <h1>Hamza</h1>
+
+    <div class="username">
+      @h.c.b07
+    </div>
+
+    <div class="line"></div>
+
+    <p class="bio">
+      Welcome to my digital business card.
+      Connect with me through the links below.
+    </p>
+
+    <div class="buttons">
+
+      <!-- CALL -->
+      <a class="btn call" href="tel:0946001607">
+        📞 Call Me
+      </a>
+
+      <!-- WHATSAPP -->
+      <a class="btn whatsapp"
+         href="https://wa.me/251946001607"
+         target="_blank">
+        💬 WhatsApp
+      </a>
+
+      <!-- EMAIL -->
+      <a class="btn email"
+         href="mailto:djh09201@gmail.com">
+        📧 Email Me
+      </a>
+
+      <!-- SOCIAL -->
+      <a class="btn social"
+         href="https://www.tiktok.com/@h.c.b07"
+         target="_blank">
+        🎵 TikTok @h.c.b07
+      </a>
+
+      <!-- COPY PHONE -->
+      <button class="btn" onclick="copyPhone()">
+        📋 Copy Phone Number
+      </button>
+
+      <!-- COPY EMAIL -->
+      <button class="btn" onclick="copyEmail()">
+        📋 Copy Email
+      </button>
+
+      <!-- SHARE -->
+      <button class="btn share" onclick="shareCard()">
+        🔗 Share My Card
+      </button>
+
+    </div>
+
+    <div class="footer">
+      © 2026 <span>Hamza</span> • Digital Business Card
+    </div>
+
+  </div>
+
+
+  <script>
+
+    function copyPhone() {
+      navigator.clipboard.writeText("0946001607");
+
+      alert("Phone number copied!");
+    }
+
+    function copyEmail() {
+      navigator.clipboard.writeText("djh09201@gmail.com");
+
+      alert("Email copied!");
+    }
+
+    async function shareCard() {
+
+      if (navigator.share) {
+
+        try {
+
+          await navigator.share({
+            title: "Hamza - Digital Business Card",
+            text: "Connect with Hamza",
+            url: window.location.href
+          });
+
+        } catch (error) {
+          console.log("Share cancelled");
+        }
+
+      } else {
+
+        navigator.clipboard.writeText(window.location.href);
+
+        alert("Card link copied!");
+
+      }
+    }
+
+  </script>
+
+</body>
+</html>
